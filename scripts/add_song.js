@@ -11,7 +11,8 @@ async function addSong() {
         artist:         document.querySelector("#artist").value,
         releaseDate:    document.querySelector("#released").value,
         popularity:     document.querySelector("#popularity").value,
-        genre:          document.querySelector("#genre").value ? document.querySelector("#genre").value.split(",") : []
+        genre:          document.querySelector("#genre").value ? document.querySelector("#genre").value.split(",") : [],
+        username:       localStorage.getItem("uname")
     }
     // create response template from server, override method to be POST (default of a fetch request is GET)
     const response  = await fetch("http://localhost:3000/api/songs", {
